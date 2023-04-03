@@ -16,7 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from ibmunapp import views
-
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls, name='admin'),
@@ -27,4 +28,4 @@ urlpatterns = [
     path('login/', views.loginsystem, name='loginsystem'),
     path('logout/', views.logoutsystem, name='logoutsystem'),
     path('signupsystem/', views.signupsystem, name='signupsystem'),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
