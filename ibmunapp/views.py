@@ -34,6 +34,9 @@ def main(request):
 def ourteam(request):
     return render(request, 'ourteam.html')
 
+def header(request):
+    return render(request, 'header.html')
+
 # auth
 def signupsystem(request):
     if request.method == "GET":

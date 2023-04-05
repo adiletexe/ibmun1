@@ -2,14 +2,58 @@
 
 <!DOCTYPE html>
 <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login | IBeeMUN</title>
+    <link rel="stylesheet" href="{% static 'css/styles-header.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <link rel="shortcut icon" href="{% static 'images/ibmunwhite.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>IBeeMUN</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+        </div>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                {% if sent %}
+                <li>
+                    <a href="{% url 'main' %}" class="sent">Message was sent successfully!</a>
+                </li>
+                {% endif  %}
+                <li>
+                    <a href="{% url 'main' %}" class="not-login">Main</a>
+                </li>
+                <li>
+                    <a class="not-login" href="{% url 'ourteam' %}">About Us</a>
+                </li>
+                <li>
+                    <a class="not-login" href="{% url 'announcements' %}">Announcements</a>
+                </li>
+                <li>
+                    <a href="{% url 'loginsystem' %}" target="_blank">
+                        <button type="button" class="btn">Log in</button>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <script src="{% static 'js/main.js' %}"></script>
+    <div class="empty"></div>
     <link rel="stylesheet" href="{% static 'css/styles-login.css' %}">
-      <link href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@600&family=Montserrat&family=Oxygen&family=Roboto+Condensed&display=swap" rel="stylesheet">
-<link rel="icon" href="{% static 'images/ibmunlogo.jpg' %}">
 <body>
     <div class="login-box">
         <h2>Login</h2>
@@ -28,6 +72,17 @@
             <button class="submit-btn" type="submit">Login</button>
         </form>
     </div>
+<link rel="stylesheet" href="{% static 'css/styles-footer.css' %}">
+<div class="empty1"></div>
+<div class='footer'>
+  <div class="social">
+    <a href="https://www.instagram.com/ibeemun/"><i class="fab fa-instagram"></i></a>
+    <a href="https://contacts.google.com/person/118275456670083600620"><i class="fab fa-monero"></i></a>
+    <a href="https://ibeemun.taplink.ws/"><i class="fab fa-diaspora"></i></a>
+  </div>
+  <p class="copyright">IBeeMUN @ 2023</p>
+</div>
+    <script src="{% static 'js/main.js' %}"></script>
 </body>
 </html>
 
